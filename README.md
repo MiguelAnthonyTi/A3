@@ -48,12 +48,13 @@ Este sistema segue o padrão CRUD para gerenciar os jogadores:
 ## Estrutura do Projeto
 
 src/
-├── Jogador.java # Classe que representa um jogador
-├── Time.java # Classe que representa o time e gerencia os jogadores
-└── Main.java # Classe principal para execução do sistema
+    Main.java # Classe principal para execução do sistema
+    util/
+        Jogador.java # Classe que representa um jogador
+        Time.java # Classe que representa o time e gerencia os jogadores    
 
 data/
-└── data_jogadores.csv # Arquivo onde os dados dos jogadores são armazenados
+    data_jogadores.csv # Arquivo onde os dados dos jogadores são armazenados
 
 ---
 
