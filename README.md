@@ -15,6 +15,14 @@ O sistema é composto por duas classes principais:
 
 ---
 
+## Armazenamento de Dados
+
+Todos os registros dos jogadores são salvos em um arquivo CSV chamado `data_jogadores.csv`, que fica dentro da pasta `data` no diretório do projeto.  
+
+Este arquivo armazena todas as informações dos jogadores, garantindo persistência dos dados entre execuções do programa.
+
+---
+
 ## Funcionalidades
 
 - **Adicionar Jogador** (Compra): Adiciona um novo jogador ao elenco.
@@ -39,3 +47,20 @@ Este sistema segue o padrão CRUD para gerenciar os jogadores:
 
 ## Estrutura do Projeto
 
+src/
+├── Jogador.java # Classe que representa um jogador
+├── Time.java # Classe que representa o time e gerencia os jogadores
+└── Main.java # Classe principal para execução do sistema
+
+data/
+└── data_jogadores.csv # Arquivo onde os dados dos jogadores são armazenados
+
+---
+
+## Como usar
+
+1. Clone este repositório
+2. Compile os arquivos `.java`:
+
+```bash
+javac src/*.java
