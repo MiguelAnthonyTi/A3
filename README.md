@@ -24,5 +24,18 @@ O sistema é composto por duas classes principais:
 
 ---
 
+## CRUD no Sistema
+
+Este sistema segue o padrão CRUD para gerenciar os jogadores:
+
+| Operação CRUD | Ação no sistema             | Descrição                                         |
+|---------------|----------------------------|--------------------------------------------------|
+| **Create**    | Comprar jogador            | Cria e adiciona um novo jogador ao elenco.       |
+| **Read**      | Listar jogadores           | Consulta e exibe informações dos jogadores ativos, emprestados ou aposentados. |
+| **Update**    | Emprestar / Aposentar      | Atualiza o status do jogador (ex: para emprestado ou aposentado). |
+| **Delete**    | Vender jogador             | Remove o jogador do elenco ativo, simulando a venda. |
+
+---
+
 ## Estrutura do Projeto
 
