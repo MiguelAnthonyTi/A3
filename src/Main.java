@@ -46,7 +46,6 @@ public class Main {
                 default:
                     System.out.println("Opção inválida. Tente novamente.\n");
             }
-                System.out.println("Carregando o sistema, aguarde...\n");
 
         } while (opcao != 6);
 
