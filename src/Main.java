@@ -25,7 +25,7 @@ public class Main {
             scanner.nextLine(); 
             switch (opcao) {
                 case 1:
-                    CreateTxt.incluiJogador();
+                    InserirJogador.incluiJogador();
                     break;
                 case 2:
                     ListarJogadores.listarJogadores();
