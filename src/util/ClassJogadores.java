@@ -1,19 +1,20 @@
 package util;
 
-public class ClassJogadores { 
-    public String nome; 
-    public String posicao; 
+public class ClassJogadores {
+    public int id;
+    public String nome;
+    public String posicao;
     public String camisa;
-    public int idade; 
-    public String cpf; 
-    public String nacionalidade; 
+    public int idade;
+    public String cpf;
+    public String nacionalidade;
     public float valor_mercado;
     public Habilidade habilidade;
 
-    // Construtor
-    public ClassJogadores(String nome, String posicao, String camisa, int idade,
+    public ClassJogadores(int id, String nome, String posicao, String camisa, int idade,
                           String cpf, String nacionalidade, float valor_mercado,
                           Habilidade habilidade) {
+        this.id = id;
         this.nome = nome;
         this.posicao = posicao;
         this.camisa = camisa;
@@ -22,6 +23,23 @@ public class ClassJogadores {
         this.nacionalidade = nacionalidade;
         this.valor_mercado = valor_mercado;
         this.habilidade = habilidade;
+    }
+
+    public ClassJogadores(String nome, String posicao, String camisa, int idade,
+                          String cpf, String nacionalidade, float valor_mercado,
+                          Habilidade habilidade) {
+        this(-1, nome, posicao, camisa, idade, cpf, nacionalidade, valor_mercado, habilidade); // ID temporário
+    }
+    
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String toCSV() {
+        return id + ";" + nome + ";" + posicao + ";" + camisa + ";" +
+               idade + ";" + cpf + ";" + nacionalidade + ";" +
+               valor_mercado + ";" + habilidade.chute + ";" + habilidade.passe + ";" +
+               habilidade.marcacao + ";" + habilidade.drible + ";" + habilidade.reflexo;
     }
 
     public static class Habilidade {

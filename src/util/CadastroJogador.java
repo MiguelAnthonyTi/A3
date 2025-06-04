@@ -1,4 +1,4 @@
-import util.ClassJogadores;
+package util;
 import java.util.Scanner;
 
 public class CadastroJogador {
@@ -6,7 +6,8 @@ public class CadastroJogador {
     public static ClassJogadores cadastrarNovoJogador() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("=== Cadastro de Jogador ===");
+        
+        System.out.println("\n=== Cadastro de Jogador ===");
 
         System.out.print("Nome: ");
         String nome = scanner.nextLine();
@@ -19,11 +20,19 @@ public class CadastroJogador {
 
         System.out.print("Idade: ");
         int idade = scanner.nextInt();
+
+        if (idade < 16){
+            System.out.println("Idade inválida. Jogador deve ser mais velhor que 16 anos.");
+            return null; 
+        }
         scanner.nextLine();
 
         System.out.print("CPF: ");
         String cpf = scanner.nextLine();
-
+        if (cpf.length() != 11) {
+            System.out.println("CPF inválido. Deve conter 11 dígitos.");
+            return null; 
+        }
         System.out.print("Nacionalidade: ");
         String nacionalidade = scanner.nextLine();
 
@@ -51,7 +60,6 @@ public class CadastroJogador {
             chute, passe, marcacao, drible, reflexo
         );
 
-        // Aqui está o retorno correto
         return new ClassJogadores(nome, posicao, camisa, idade, cpf, nacionalidade, valor_mercado, habilidade);
     }
 }

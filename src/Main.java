@@ -1,32 +1,55 @@
-import util.ClassJogadores;
+import java.util.Scanner;
 
+import util.*;
 public class Main {
     public static void main(String[] args) {
-        ClassJogadores jogador = CadastroJogador.cadastrarNovoJogador();
+        Scanner scanner = new Scanner(System.in);
+        int opcao;
 
-        if (jogador == null) {
-            System.out.println("Jogador não foi cadastrado corretamente.");
-            return;
-        }
+        do {
+            System.out.println("\nBem-vindo ao sistema de gerenciamento de jogadores!");
+            System.out.println("Escolha uma opção:");
+            System.out.println("1. Cadastrar novo jogador");
+            System.out.println("2. Listar jogadores cadastrados");
+            System.out.println("3. Buscar jogador por ID");
+            System.out.println("4. Atualizar jogador");
+            System.out.println("5. Demitir jogador");
+            System.out.println("6. Sair");
 
-        System.out.println("\n=== Jogador Cadastrado ===");
-        System.out.println("Nome: " + jogador.nome);
-        System.out.println("Posição: " + jogador.posicao);
-        System.out.println("Camisa: " + jogador.camisa);
-        System.out.println("Idade: " + jogador.idade);
-        System.out.println("CPF: " + jogador.cpf);
-        System.out.println("Nacionalidade: " + jogador.nacionalidade);
-        System.out.println("Valor de Mercado: R$" + jogador.valor_mercado);
+            System.out.print("Opção: ");
+            while (!scanner.hasNextInt()) {
+                System.out.print("Por favor, digite um número válido: ");
+                scanner.next();            }
 
-        if (jogador.habilidade != null) {
-            System.out.println("\n--- Habilidades ---");
-            System.out.println("Chute: " + jogador.habilidade.chute);
-            System.out.println("Passe: " + jogador.habilidade.passe);
-            System.out.println("Marcação: " + jogador.habilidade.marcacao);
-            System.out.println("Drible: " + jogador.habilidade.drible);
-            System.out.println("Reflexo: " + jogador.habilidade.reflexo);
-        } else {
-            System.out.println("Habilidades não definidas.");
-        }
+            opcao = scanner.nextInt();
+            scanner.nextLine(); 
+            switch (opcao) {
+                case 1:
+                    CreateTxt.incluiJogador();
+                    break;
+                case 2:
+                    ListarJogadores.listarJogadores();
+                    break;
+                case 3:
+                    BuscarJogador.buscarPorId(scanner);
+                    break;
+                case 4:
+                    AtualizarJogador.atualizarDados(scanner);
+                    break;
+                case 5:
+                    DemitirJogador.demitirJogador(scanner);
+                    break;
+                case 6:
+                    System.out.println("Saindo do sistema. Até logo!\n");
+                    break;
+
+                default:
+                    System.out.println("Opção inválida. Tente novamente.\n");
+            }
+                System.out.println("Carregando o sistema, aguarde...\n");
+
+        } while (opcao != 6);
+
+        scanner.close();
     }
 }
